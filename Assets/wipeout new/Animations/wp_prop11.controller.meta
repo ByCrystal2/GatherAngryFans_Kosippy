@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 457ffac48f23db14e9dbfc14d452fa0c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223538
+  packageName: 3D Wipe Out Infinte Runner - Level Based
+  packageVersion: 1.0
+  assetPath: Assets/wipeout new/Animations/wp_prop11.controller
+  uploadId: 520211
