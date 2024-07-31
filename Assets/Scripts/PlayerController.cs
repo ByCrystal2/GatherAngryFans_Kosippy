@@ -13,10 +13,18 @@ public class PlayerController : MonoBehaviour
     private List<Transform> followers = new List<Transform>();
     public Transform Holder;
     public static PlayerController Player;
+    public int ballCount;
+    public float ballFireTimer;
+    public float fireDelay = 2;
+
     private void Awake()
     {
+        if (ballCount <= 0)
+            ballCount = 1;
+        
         Player = this;
     }
+
     void Update()
     {
         // Basic player movement
@@ -27,6 +35,12 @@ public class PlayerController : MonoBehaviour
 
         // Update the positions of the followers
         UpdateFollowers();
+
+        if (ballFireTimer < Time.time)
+        {
+            Fire(ballCount);
+            ballFireTimer = Time.time + fireDelay;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -115,5 +129,14 @@ public class PlayerController : MonoBehaviour
 
         // Remove the follower from the list
         followers.Remove(follower);
+    }
+
+    //Top atisi
+
+    void Fire(int count)
+    {
+        GameObject handler = Instantiate(Resources.Load<GameObject>("BallParent"), transform.position + transform.forward, Quaternion.identity);
+        BallHandler ballHandler = handler.GetComponent<BallHandler>();
+        ballHandler.Initialize(count);
     }
 }

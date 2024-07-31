@@ -271,6 +271,11 @@ MonoBehaviour:
   platformWidth: 10
   platformLength: 500
   Holder: {fileID: 3191077725930326567}
+  ballCount: 1
+  numberOfBalls: 10
+  distanceBetweenRows: 0.5
+  moveSpeed: 5
+  rotationSpeed: 100
 --- !u!95 &8433648325059527210
 Animator:
   serializedVersion: 7
